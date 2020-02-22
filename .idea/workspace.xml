@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72d55189-b37d-44c6-905a-389ef9945593" name="Default Changelist" comment="" />
+    <list default="true" id="72d55189-b37d-44c6-905a-389ef9945593" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/se/ecutb/jonatan/data/CityDaoJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se/ecutb/jonatan/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/ecutb/jonatan/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se/ecutb/jonatan/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/ecutb/jonatan/entity/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se/ecutb/jonatan/CityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/ecutb/jonatan/data/CityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se/ecutb/jonatan/CityDaoJDBC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/connection.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/se/ecutb/jonatan/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se/ecutb/jonatan/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/se/ecutb/jonatan/City.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/se/ecutb/jonatan/CityDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/se/ecutb/jonatan/CityDaoJDBC.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +31,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -23,6 +42,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1XyUtHFs1BLPHJJucjpCdDcbiaF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -30,18 +52,23 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Praktisk Databasdesign" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="se.ecutb.jonatan" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Users\Jonatan\Documents\Ec Utb\Praktisk Databasdesign" />
       <recent name="E:\Users\Jonatan\Documents\Ec Utb\Avancerad javaprogrammering\JDBC_Assignment" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Users\Jonatan\Documents\Ec Utb\Praktisk Databasdesign\JDBC_Assignment\resources" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="se.ecutb.jonatan" />
     </key>
   </component>
   <component name="RunManager">
@@ -50,7 +77,7 @@
       <module name="JDBC_Assignment" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="se.ecutb.jonatan.*" />
+          <option name="PATTERN" value="se.ecutb.jonatan.entity.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,10 +117,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1582117691535">
+    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1582285713739">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582117691535" />
+    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582285713739" />
     <state x="690" y="268" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1582105136707">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -106,6 +133,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="224" key="#xdebugger.evaluate/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582120966562" />
+    <state x="689" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1582285367077">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582285367077" />
     <state width="408" height="466" key="DebuggerActiveHint" timestamp="1582118385060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -114,49 +145,53 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="263" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582125306307" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1582124951579">
+    <state width="1877" height="262" key="GridCell.Tab.0.bottom" timestamp="1582322006108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582124951579" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1582124951579">
+    <state width="1877" height="262" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582322006108" />
+    <state width="1877" height="262" key="GridCell.Tab.0.center" timestamp="1582322006108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582124951579" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1582124951579">
+    <state width="1877" height="262" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582322006108" />
+    <state width="1877" height="262" key="GridCell.Tab.0.left" timestamp="1582322006108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582124951579" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1582124951579">
+    <state width="1877" height="262" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582322006108" />
+    <state width="1877" height="262" key="GridCell.Tab.0.right" timestamp="1582322006108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582124951579" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1582124951495">
+    <state width="1877" height="262" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582322006108" />
+    <state width="1877" height="262" key="GridCell.Tab.1.bottom" timestamp="1582322006108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582124951495" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1582124951495">
+    <state width="1877" height="262" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582322006108" />
+    <state width="1877" height="262" key="GridCell.Tab.1.center" timestamp="1582322006108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582124951495" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1582124951495">
+    <state width="1877" height="262" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582322006108" />
+    <state width="1877" height="262" key="GridCell.Tab.1.left" timestamp="1582322006108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582124951495" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1582124951495">
+    <state width="1877" height="262" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582322006108" />
+    <state width="1877" height="262" key="GridCell.Tab.1.right" timestamp="1582322006108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582124951495" />
-    <state x="490" y="176" key="Maven.ArtifactSearchDialog" timestamp="1582018428501">
+    <state width="1877" height="262" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582322006108" />
+    <state x="490" y="176" key="Maven.ArtifactSearchDialog" timestamp="1582281984854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="490" y="176" key="Maven.ArtifactSearchDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582018428501" />
+    <state x="490" y="176" key="Maven.ArtifactSearchDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582281984854" />
     <state x="440" y="95" key="SettingsEditor" timestamp="1582107764747">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="95" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582107764747" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1582121484520">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1582278752251">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582121484520" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582278752251" />
+    <state x="702" y="140" key="refactoring.ChangeSignatureDialog" timestamp="1582285337776">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="702" y="140" key="refactoring.ChangeSignatureDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582285337776" />
   </component>
 </project>

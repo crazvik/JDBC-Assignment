@@ -1,20 +1,20 @@
-package se.ecutb.jonatan;
+package se.ecutb.jonatan.data;
+
+import org.springframework.stereotype.Repository;
+import se.ecutb.jonatan.entity.City;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static se.ecutb.jonatan.data.Database.getConnection;
+
+@Repository
 public class CityDaoJDBC implements CityDao {
     private City city;
-    private List<City> cities = new ArrayList<>();
+    private final List<City> cities = new ArrayList<>();
 
-    private static final String INSERT =
-            "INSERT INTO city(name,countryCode,district,population) VALUES (?,?,?,?)";
-
-    public static Connection getConnection() throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/world?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "password");
-        return connection;
-    }
+    private static final String INSERT_SQL = "INSERT INTO city(Name, CountryCode, District, Population) VALUES(?, ?, ?, ?) ";
 
     @Override
     public City findById(int id) {
@@ -38,14 +38,14 @@ public class CityDaoJDBC implements CityDao {
 
     @Override
     public List<City> findByCode(String code) {
+        cities.clear();
         try {
             Connection connection = getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM city WHERE countrycode LIKE ?");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM city WHERE countryCode LIKE ?");
             statement.setString(1, "%" + code.toUpperCase() + "%");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                city =  new City(resultSet.getInt(1),
-                        resultSet.getString(2),
+                city =  new City(resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),
                         resultSet.getInt(5));
@@ -59,14 +59,14 @@ public class CityDaoJDBC implements CityDao {
 
     @Override
     public List<City> findByName(String name) {
+        cities.clear();
         try {
             Connection connection = getConnection();
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM city WHERE name LIKE ?");
             statement.setString(1, "%" + name.toUpperCase() + "%");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                city =  new City(resultSet.getInt(1),
-                        resultSet.getString(2),
+                city =  new City(resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),
                         resultSet.getInt(5));
@@ -80,13 +80,13 @@ public class CityDaoJDBC implements CityDao {
 
     @Override
     public List<City> findAll() {
+        cities.clear();
         try {
             Connection connection = getConnection();
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM city");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                city =  new City(resultSet.getInt(1),
-                        resultSet.getString(2),
+                city =  new City(resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),
                         resultSet.getInt(5));
@@ -100,31 +100,23 @@ public class CityDaoJDBC implements CityDao {
 
     @Override
     public City add(City city) {
-        Connection connection = null;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        try{
-            connection = getConnection();
-            statement = connection.prepareStatement("ALTER TABLE city AUTO_INCREMENT = 4079");
-            statement.execute();
-            statement = connection.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
+        try {
+            Connection connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement(INSERT_SQL, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, city.getCityName());
             statement.setString(2, city.getCountryCode());
-            statement.setString(3,city.getCityDistrict());
-            statement.setObject(4, city.getCityPopulation());
-            statement.execute();
-            resultSet = statement.getGeneratedKeys();
-            while(resultSet.next()) {
-                city = new City(
-                        resultSet.getInt(1),
-                        city.getCityName(),
-                        city.getCountryCode(),
-                        city.getCityDistrict(),
-                        city.getCityPopulation()
-                );
+            statement.setString(3, city.getCityDistrict());
+            statement.setInt(4, city.getCityPopulation());
+            statement.executeUpdate();
+            try (ResultSet resultSet = statement.getGeneratedKeys()) {
+                if (resultSet.next()) {
+                    city.setCityId(resultSet.getInt(1));
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (NullPointerException e) {
+            System.err.println("City can't be null!");
         }
         return city;
     }
@@ -136,14 +128,22 @@ public class CityDaoJDBC implements CityDao {
 
     @Override
     public int delete(City city) {
+        int rowsAffected = 0;
         try {
             Connection connection = getConnection();
-            PreparedStatement statement = connection.prepareStatement("DELETE FROM city WHERE ID=?");
+            PreparedStatement statement = connection.prepareStatement("DELETE FROM city WHERE ID=?", Statement.RETURN_GENERATED_KEYS);
             statement.setInt(1, city.getCityId());
-            statement.execute();
+            rowsAffected = statement.executeUpdate();
+            try (ResultSet resultSet = statement.getGeneratedKeys()) {
+                if (resultSet.next()) {
+                    city.setCityId(resultSet.getInt(1));
+                }
+            }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (NullPointerException e) {
+            System.err.println("City can't be null!");
         }
-        return city.getCityId();
+        return rowsAffected;
     }
 }

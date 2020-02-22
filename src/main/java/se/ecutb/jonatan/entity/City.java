@@ -1,23 +1,24 @@
-package se.ecutb.jonatan;
+package se.ecutb.jonatan.entity;
 
 import java.util.Objects;
 
 public class City {
+
     private int cityId;
     private String cityName;
     private String countryCode;
     private String cityDistrict;
     private int cityPopulation;
 
-    public City(int cityId, String cityName, String countryCode, String cityDistrict, int cityPopulation) {
-        this.cityId = cityId;
-        this.cityName = cityName;
-        this.countryCode = countryCode;
-        this.cityDistrict = cityDistrict;
-        this.cityPopulation = cityPopulation;
+    public City() {
     }
 
     public City(String cityName, String countryCode, String cityDistrict, int cityPopulation) {
+        this(0, cityName, countryCode, cityDistrict, cityPopulation);
+    }
+
+    public City(int cityId, String cityName, String countryCode, String cityDistrict, int cityPopulation) {
+        this.cityId = cityId;
         this.cityName = cityName;
         this.countryCode = countryCode;
         this.cityDistrict = cityDistrict;

@@ -1,4 +1,6 @@
-package se.ecutb.jonatan;
+package se.ecutb.jonatan.data;
+
+import se.ecutb.jonatan.entity.City;
 
 import java.util.List;
 

@@ -1,9 +1,6 @@
 package se.ecutb.jonatan;
 
-/**
- * Hello world!
- *
- */
+import se.ecutb.jonatan.data.CityDaoJDBC;
 public class App 
 {
     public static void main( String[] args ) {
@@ -12,7 +9,7 @@ public class App
         //System.out.println(daoJDBC.findByCode("gbr"));
         //System.out.println(daoJDBC.findByName("Paris"));
         //System.out.println(daoJDBC.findAll().size());
-        System.out.println(daoJDBC.add(new City("here", "tst", "there", 2000)));
-        //System.out.println(daoJDBC.delete(daoJDBC.findById(4081)));
+        //System.out.println(daoJDBC.add(new City("test", "tst", "here", 20)));
+        //System.out.println(daoJDBC.delete(daoJDBC.findById(4090)));
     }
 }
