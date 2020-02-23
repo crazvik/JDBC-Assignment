@@ -1,7 +1,9 @@
 package se.ecutb.jonatan;
 
 import se.ecutb.jonatan.data.CityDaoJDBC;
-public class App 
+import se.ecutb.jonatan.entity.City;
+
+public class App
 {
     public static void main( String[] args ) {
         CityDaoJDBC daoJDBC = new CityDaoJDBC();
@@ -9,7 +11,8 @@ public class App
         //System.out.println(daoJDBC.findByCode("gbr"));
         //System.out.println(daoJDBC.findByName("Paris"));
         //System.out.println(daoJDBC.findAll().size());
-        //System.out.println(daoJDBC.add(new City("test", "tst", "here", 20)));
-        //System.out.println(daoJDBC.delete(daoJDBC.findById(4090)));
+        //System.out.println(daoJDBC.add(new City("test", "JPN", "here", 20)));
+        //System.out.println(daoJDBC.delete(daoJDBC.findById(4088)));
+        System.out.println(daoJDBC.update(new City(4079,"thiscity", "", "", 0)));
     }
 }

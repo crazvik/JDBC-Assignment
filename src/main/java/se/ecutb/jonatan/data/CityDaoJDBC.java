@@ -14,7 +14,7 @@ public class CityDaoJDBC implements CityDao {
     private City city;
     private final List<City> cities = new ArrayList<>();
 
-    private static final String INSERT_SQL = "INSERT INTO city(Name, CountryCode, District, Population) VALUES(?, ?, ?, ?) ";
+    private static final String INSERT_SQL = "INSERT INTO country(Name, Code, Region, Population) VALUES(?, ?, ?, ?) ";
 
     @Override
     public City findById(int id) {
@@ -102,16 +102,28 @@ public class CityDaoJDBC implements CityDao {
     public City add(City city) {
         try {
             Connection connection = getConnection();
-            PreparedStatement statement = connection.prepareStatement(INSERT_SQL, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement statement = connection.prepareStatement("SELECT exists(SELECT * FROM country WHERE Code LIKE ?)");
+            statement.setString(1, city.getCountryCode());
+            statement.execute();
+            ResultSet resultSet = statement.getResultSet();
+            if (resultSet.next()) {
+            } else {
+                statement = connection.prepareStatement(INSERT_SQL, Statement.RETURN_GENERATED_KEYS);
+                statement.setString(1, city.getCityName());
+                statement.setString(2, city.getCountryCode());
+                statement.setString(3, city.getCityDistrict());
+                statement.setInt(4, city.getCityPopulation());
+                statement.executeUpdate();
+            }
+            statement = connection.prepareStatement("INSERT INTO city(Name, CountryCode, District, Population) VALUES(?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, city.getCityName());
             statement.setString(2, city.getCountryCode());
             statement.setString(3, city.getCityDistrict());
             statement.setInt(4, city.getCityPopulation());
             statement.executeUpdate();
-            try (ResultSet resultSet = statement.getGeneratedKeys()) {
-                if (resultSet.next()) {
-                    city.setCityId(resultSet.getInt(1));
-                }
+            resultSet = statement.getGeneratedKeys();
+            if (resultSet.next()) {
+                city.setCityId(resultSet.getInt(1));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -123,7 +135,18 @@ public class CityDaoJDBC implements CityDao {
 
     @Override
     public City update(City city) {
-        return null;
+        try {
+            Connection connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement("UPDATE city SET name=? WHERE ID=?", Statement.RETURN_GENERATED_KEYS);
+            statement.setString(1, city.getCityName());
+            statement.setInt(2, city.getCityId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            System.err.println("City doesn't exist!");
+        }
+        return city;
     }
 
     @Override
@@ -142,7 +165,7 @@ public class CityDaoJDBC implements CityDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (NullPointerException e) {
-            System.err.println("City can't be null!");
+            System.err.println("City doesn't exist!");
         }
         return rowsAffected;
     }
