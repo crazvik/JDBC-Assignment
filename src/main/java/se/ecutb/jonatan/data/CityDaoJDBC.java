@@ -45,7 +45,8 @@ public class CityDaoJDBC implements CityDao {
             statement.setString(1, "%" + code.toUpperCase() + "%");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                city =  new City(resultSet.getString(2),
+                city =  new City(resultSet.getInt(1),
+                        resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),
                         resultSet.getInt(5));
@@ -66,7 +67,8 @@ public class CityDaoJDBC implements CityDao {
             statement.setString(1, "%" + name.toUpperCase() + "%");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                city =  new City(resultSet.getString(2),
+                city =  new City(resultSet.getInt(1),
+                        resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),
                         resultSet.getInt(5));
@@ -154,8 +156,8 @@ public class CityDaoJDBC implements CityDao {
         int rowsAffected = 0;
         try {
             Connection connection = getConnection();
-            PreparedStatement statement = connection.prepareStatement("DELETE FROM city WHERE ID=?", Statement.RETURN_GENERATED_KEYS);
-            statement.setInt(1, city.getCityId());
+            PreparedStatement statement = connection.prepareStatement("DELETE FROM city WHERE name LIKE ?", Statement.RETURN_GENERATED_KEYS);
+            statement.setString(1, city.getCityName());
             rowsAffected = statement.executeUpdate();
             try (ResultSet resultSet = statement.getGeneratedKeys()) {
                 if (resultSet.next()) {
