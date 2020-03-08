@@ -30,6 +30,9 @@ public class CityDaoJDBC implements CityDao {
                         resultSet.getString(4),
                         resultSet.getInt(5));
             }
+            resultSet.close();
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -52,6 +55,9 @@ public class CityDaoJDBC implements CityDao {
                         resultSet.getInt(5));
                 cities.add(city);
             }
+            resultSet.close();
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -74,6 +80,9 @@ public class CityDaoJDBC implements CityDao {
                         resultSet.getInt(5));
                 cities.add(city);
             }
+            resultSet.close();
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -94,6 +103,9 @@ public class CityDaoJDBC implements CityDao {
                         resultSet.getInt(5));
                 cities.add(city);
             }
+            resultSet.close();
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -127,6 +139,9 @@ public class CityDaoJDBC implements CityDao {
             if (resultSet.next()) {
                 city.setCityId(resultSet.getInt(1));
             }
+            resultSet.close();
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (NullPointerException e) {
@@ -143,6 +158,8 @@ public class CityDaoJDBC implements CityDao {
             statement.setString(1, city.getCityName());
             statement.setInt(2, city.getCityId());
             statement.executeUpdate();
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (NullPointerException e) {
@@ -163,6 +180,9 @@ public class CityDaoJDBC implements CityDao {
                 if (resultSet.next()) {
                     city.setCityId(resultSet.getInt(1));
                 }
+                resultSet.close();
+                statement.close();
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
